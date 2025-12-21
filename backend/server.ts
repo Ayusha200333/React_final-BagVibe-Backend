@@ -2,7 +2,8 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db";
-import userRoutes from "./routes/UserRoutes"; // TypeScript import
+import userRoutes from "./routes/UserRoutes"; 
+import productRoutes from "./routes/ProductRoutes"; 
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api/users", userRoutes);
+app.use("/api/product", productRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
