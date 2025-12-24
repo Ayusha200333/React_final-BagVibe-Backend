@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import Product, { IProduct } from "./models/Product";
 import User, { IUser } from "./models/User";
+import Cart from "./models/Cart";
 import { products } from "./data/products";
 
 dotenv.config();
@@ -21,6 +22,7 @@ const seedData = async (): Promise<void> => {
    
     await Product.deleteMany({});
     await User.deleteMany({});
+    await Cart.deleteMany({});
 
     const createUser: IUser = await User.create({
       name: "Admin User",
