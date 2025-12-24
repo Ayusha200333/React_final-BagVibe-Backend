@@ -18,11 +18,10 @@ mongoose
 
 const seedData = async (): Promise<void> => {
   try {
-    // Clear existing data
+   
     await Product.deleteMany({});
     await User.deleteMany({});
 
-    // Create admin user
     const createUser: IUser = await User.create({
       name: "Admin User",
       email: "admin@example.com",
