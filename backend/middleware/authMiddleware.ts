@@ -26,13 +26,17 @@
 // module.exports = {protect}
 
 
-
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import User from "../models/User";
 
-interface AuthRequest extends Request {
-  user?: any;
+export interface AuthRequest extends Request {
+  user?: {
+    _id: string;
+    name: string;
+    email: string;
+    role: "admin" | "customer";
+  };
 }
 
 const protect = async (
@@ -42,31 +46,39 @@ const protect = async (
 ) => {
   let token: string | undefined;
 
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
+  if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
     try {
       token = req.headers.authorization.split(" ")[1];
+      const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as any;
 
-      const decoded = jwt.verify(
-        token,
-        process.env.JWT_SECRET as string
-      ) as any;
+      const user = await User.findById(decoded.user.id).select("-password");
+      if (!user) {
+        return res.status(401).json({ message: "User not found" });
+      }
 
-      req.user = await User.findById(decoded.user.id).select("-password");
+      req.user = {
+        _id: user._id.toString(),
+        name: user.name,
+        email: user.email,
+        role: user.role
+      };
+
       next();
     } catch (error) {
       console.error("Token verification failed:", error);
-      return res.status(401).json({
-        message: "Not authorized, token failed",
-      });
+      return res.status(401).json({ message: "Not authorized, token failed" });
     }
   } else {
-    return res.status(401).json({
-      message: "Not authorized, no token provided",
-    });
+    return res.status(401).json({ message: "Not authorized, no token provided" });
   }
 };
 
-export default protect;
+const admin = (req: AuthRequest, res: Response, next: NextFunction) => {
+  if (req.user && req.user.role === "admin") {
+    next();
+  } else {
+    res.status(403).json({ message: "Not authorized as an admin" });
+  }
+};
+
+export { protect, admin };

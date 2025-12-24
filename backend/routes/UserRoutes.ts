@@ -89,8 +89,7 @@
 import express, { Request, Response, Router } from "express";
 import User from "../models/User";
 import jwt from "jsonwebtoken";
-import protect from "../middleware/authMiddleware";
-
+import { protect } from "../middleware/authMiddleware";
 const router: Router = express.Router();
 
 router.post("/register", async (req: Request, res: Response) => {
