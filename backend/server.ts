@@ -8,6 +8,8 @@ import cartRoutes from "./routes/CartRoutes";
 import checkoutRoutes from "./routes/CheckoutRoutes"; 
 import orderRoutes from "./routes/OrderRoutes"; 
 import uploadRoutes from "./routes/UploadRoutes"; 
+import subscribeRoute from "./routes/subscribeRoute"; 
+
 
 dotenv.config();
 
@@ -30,6 +32,7 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/checkout", checkoutRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/upload", uploadRoutes);
+app.use("/api/subscribe", subscribeRoute);
 
 
 app.listen(PORT, () => {
