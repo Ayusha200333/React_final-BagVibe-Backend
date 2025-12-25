@@ -5,6 +5,7 @@ export interface ICheckoutItem {
   name: string;
   image: string;
   price: number;
+  quantity: number;
 }
 
 export interface ICheckout extends Document {
@@ -44,6 +45,10 @@ const checkoutItemSchema = new Schema<ICheckoutItem>(
       required: true,
     },
     price: {
+      type: Number,
+      required: true,
+    },
+    quantity:{
       type: Number,
       required: true,
     },

@@ -5,6 +5,7 @@ import connectDB from "./config/db";
 import userRoutes from "./routes/UserRoutes"; 
 import productRoutes from "./routes/ProductRoutes"; 
 import cartRoutes from "./routes/CartRoutes"; 
+import checkoutRoutes from "./routes/CheckoutRoutes"; 
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/api/users", userRoutes);
 app.use("/api/product", productRoutes);
 app.use("/api/cart", cartRoutes);
+app.use("/api/checkout", checkoutRoutes);
 
 
 app.listen(PORT, () => {
