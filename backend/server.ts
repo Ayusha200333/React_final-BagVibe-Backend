@@ -10,6 +10,7 @@ import orderRoutes from "./routes/OrderRoutes";
 import uploadRoutes from "./routes/UploadRoutes"; 
 import subscribeRoute from "./routes/subscribeRoute"; 
 import adminRoutes from "./routes/adminRoutes"; 
+import productAdminRoutes from "./routes/ProductAdminRoutes"; 
 
 
 dotenv.config();
@@ -34,7 +35,10 @@ app.use("/api/checkout", checkoutRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/upload", uploadRoutes);
 app.use("/api/subscribe", subscribeRoute);
+
 app.use("/api/admin/users", adminRoutes);
+app.use("/api/admin/products", productAdminRoutes);
+
 
 
 app.listen(PORT, () => {
