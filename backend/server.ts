@@ -11,6 +11,7 @@ import uploadRoutes from "./routes/UploadRoutes";
 import subscribeRoute from "./routes/subscribeRoute"; 
 import adminRoutes from "./routes/adminRoutes"; 
 import productAdminRoutes from "./routes/ProductAdminRoutes"; 
+import adminOrderRoutes from "./routes/adminOrderRoutes"; 
 
 
 dotenv.config();
@@ -38,6 +39,7 @@ app.use("/api/subscribe", subscribeRoute);
 
 app.use("/api/admin/users", adminRoutes);
 app.use("/api/admin/products", productAdminRoutes);
+app.use("/api/admin/orders", adminOrderRoutes);
 
 
 
