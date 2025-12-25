@@ -7,6 +7,7 @@ import productRoutes from "./routes/ProductRoutes";
 import cartRoutes from "./routes/CartRoutes"; 
 import checkoutRoutes from "./routes/CheckoutRoutes"; 
 import orderRoutes from "./routes/OrderRoutes"; 
+import uploadRoutes from "./routes/UploadRoutes"; 
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use("/api/product", productRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/checkout", checkoutRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/upload", uploadRoutes);
 
 
 app.listen(PORT, () => {
