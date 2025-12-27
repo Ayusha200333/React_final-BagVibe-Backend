@@ -5,7 +5,7 @@ export interface ICheckoutItem {
   name: string;
   image: string;
   price: number;
-  quantity: number;
+  quantity: number; 
 }
 
 export interface ICheckout extends Document {
@@ -25,8 +25,8 @@ export interface ICheckout extends Document {
   paymentDetails?: any;
   isFinalized: boolean;
   finalizedAt?: Date;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const checkoutItemSchema = new Schema<ICheckoutItem>(
@@ -36,22 +36,10 @@ const checkoutItemSchema = new Schema<ICheckoutItem>(
       ref: "Product",
       required: true,
     },
-    name: {
-      type: String,
-      required: true,
-    },
-    image: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-    quantity:{
-      type: Number,
-      required: true,
-    },
+    name: { type: String, required: true },
+    image: { type: String, required: true },
+    price: { type: Number, required: true },
+    quantity: { type: Number, required: true }, 
   },
   { _id: false }
 );
@@ -103,5 +91,4 @@ const checkoutSchema = new Schema<ICheckout>(
   { timestamps: true }
 );
 
-const Checkout = mongoose.model<ICheckout>("Checkout", checkoutSchema);
-export default Checkout;
+export default mongoose.model<ICheckout>("Checkout", checkoutSchema);
