@@ -1,9 +1,9 @@
 import { Router, Request, Response } from "express";
-import Subscriber from "../models/Subscribe";
+import Subscriber from "../models/Subscriber";
 
 const router: Router = Router();
 
-router.post("/subscribe", async (req: Request, res: Response) => {
+router.post("/",  async (req: Request, res: Response) => {
   const { email } = req.body as { email?: string };
 
   if (!email) {

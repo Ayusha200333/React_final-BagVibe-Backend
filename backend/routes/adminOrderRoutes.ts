@@ -16,7 +16,7 @@ router.get("/", protect, admin, async (req: Request, res: Response) => {
 
 router.put("/:id", protect, admin, async (req: Request, res: Response) => {
   try {
-    const order = await Order.findById(req.params.id);
+    const order = await Order.findById(req.params.id).populate("user","name");
 
     if (order) {
       order.status = req.body.status || order.status;

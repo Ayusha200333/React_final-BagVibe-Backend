@@ -36,10 +36,24 @@ const checkoutItemSchema = new Schema<ICheckoutItem>(
       ref: "Product",
       required: true,
     },
-    name: { type: String, required: true },
-    image: { type: String, required: true },
-    price: { type: Number, required: true },
-    quantity: { type: Number, required: true }, 
+    name: { 
+      type: String, 
+      required: true 
+    },
+    image: { 
+      type: String, 
+      required: true 
+    },
+    price: { 
+      type: Number, 
+      required: true 
+    },
+    quantity: { 
+      type: Number, 
+      required: true 
+    }, 
+    // size: String,
+    // color:String,
   },
   { _id: false }
 );

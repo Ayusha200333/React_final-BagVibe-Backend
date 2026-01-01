@@ -139,11 +139,14 @@ router.put("/", async (req: Request, res: Response) => {
 });
 
 router.delete("/", async (req: Request, res: Response) => {
-  const productId = req.query.productId as string;
-  const size = req.query.size as string;
-  const color = req.query.color as string;
-  const guestId = req.query.guestId as string | undefined;
-  const userId = req.query.userId as string | undefined;
+  const { productId, size, color, guestId, userId } = req.body; // Accept from body
+
+  // Fallback to query if body not present
+  const finalProductId = productId || req.query.productId;
+  const finalSize = size || req.query.size;
+  const finalColor = color || req.query.color;
+  const finalGuestId = guestId || req.query.guestId;
+  const finalUserId = userId || req.query.userId;
 
   try {
     let cart = await getCart(userId, guestId);
