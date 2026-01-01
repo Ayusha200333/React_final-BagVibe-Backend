@@ -59,40 +59,11 @@ Secure password handling
 Image upload for products
 Error handling and validation
 
-**--Screenshots--**
-
-Home Page: 
-
-(<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9bcc4015-5411-42e6-b29e-bb10a29e1b75" />
-)
-
-Product List: 
-
-(<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/295189f6-1874-4031-9d93-7fbb08d7228a" />
-)
-
-(<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/adce5cd9-dd08-4c2b-b9d4-af76c0d8265f" />
-)
-
-Login and Register Page: 
-
-(<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/55c75be3-6617-4ef0-9992-b1bbc8125482" />
-)
-
-(<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c65bf3ee-ab8c-418c-aa66-dd8441d0716d" />
-)
-
-Cart Section: 
-(<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/242314fe-5f05-4ed3-97a2-94ceadf445eb" />
-)
-
-Checkout Setion: 
-(<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/33085306-628b-4062-b7e3-3c2f924eea1d" />
-)
 
 **--Clone the repository--**
 
 git clone: https://github.com/Ayusha200333/React_final-BagVibe-Backend
 
 Versel Link:
+
 
