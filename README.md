@@ -30,10 +30,13 @@ Tailwind CSS or Bootstrap – Styling
 Tools:
 
 Git & GitHub – Version control
+
 Postman – API testing
+
 MongoDB Atlas – Cloud database 
 
 **--Main Features--**
+
 User Features:
 
 User registration and login (with JWT authentication)
@@ -65,5 +68,6 @@ Error handling and validation
 git clone: https://github.com/Ayusha200333/React_final-BagVibe-Backend
 
 Versel Link:
+
 
 
